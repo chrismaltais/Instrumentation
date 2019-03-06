@@ -67,6 +67,7 @@ class TestFile {
     	instrumentation.stopTiming("Selection Sort");
     	
     	instrumentation.stopTiming("Main");
-    	
+
+    	instrumentation.dump();
     }
 }
