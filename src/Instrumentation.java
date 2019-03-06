@@ -55,10 +55,13 @@ public class Instrumentation {
             m.startTime = System.currentTimeMillis();
             timingMatcher.push(m);
             // append log to string/file: |\tSTARTTIMING: method name
-            int numTabs = timingMatcher.size();
+            int numTabs = timingMatcher.size() - 1;
             String tabs = "";
             for (int i = 0; i < numTabs; ++i) {
                 tabs += "\t";
+            }
+            if (tabs != "") {
+                tabs = "|" + tabs;
             }
             System.out.println(tabs + "STARTTIMING: " + comment);
         }
@@ -87,7 +90,10 @@ public class Instrumentation {
             for (int i = 0; i < numTabs; ++i) {
                 tabs += "\t";
             }
-            System.out.println(tabs + "STOPTIMING: " + comment + " " + duration);
+            if (tabs != "") {
+                tabs = "|" + tabs;
+            }
+            System.out.println(tabs + "STOPTIMING: " + comment + " " + duration + " ms");
         }
 
     }
@@ -117,7 +123,10 @@ public class Instrumentation {
             for (int i = 0; i < numTabs; ++i) {
                 tabs += "\t";
             }
-            System.out.println(tabs + "STOPTIMING: " + comment);
+            if (tabs != "") {
+                tabs = "|" + tabs;
+            }
+            System.out.println(tabs + "COMMENT: " + comment);
         }
 
     }
