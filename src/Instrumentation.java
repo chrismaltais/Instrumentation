@@ -58,10 +58,7 @@ public class Instrumentation {
             int numTabs = timingMatcher.size() - 1;
             String tabs = "";
             for (int i = 0; i < numTabs; ++i) {
-                tabs += "\t";
-            }
-            if (tabs != "") {
-                tabs = "|" + tabs;
+                tabs += "|\t";
             }
             System.out.println(tabs + "STARTTIMING: " + comment);
         }
@@ -88,10 +85,7 @@ public class Instrumentation {
             int numTabs = timingMatcher.size();
             String tabs = "";
             for (int i = 0; i < numTabs; ++i) {
-                tabs += "\t";
-            }
-            if (tabs != "") {
-                tabs = "|" + tabs;
+                tabs += "|\t";
             }
             System.out.println(tabs + "STOPTIMING: " + comment + " " + duration + " ms");
         }
@@ -121,10 +115,7 @@ public class Instrumentation {
             int numTabs = timingMatcher.size();
             String tabs = "";
             for (int i = 0; i < numTabs; ++i) {
-                tabs += "\t";
-            }
-            if (tabs != "") {
-                tabs = "|" + tabs;
+                tabs += "|\t";
             }
             System.out.println(tabs + "COMMENT: " + comment);
         }
