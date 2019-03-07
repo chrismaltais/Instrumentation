@@ -69,6 +69,7 @@ class NaiveQuickSortAlgorithm extends SortAlgorithm
 		super.hiMarker = hi0;
 		if (lo >= hi)
 		{
+			instrumentation.stopTiming("QuickSort");
 			return;
 		} else if (lo == hi - 1)
 		{

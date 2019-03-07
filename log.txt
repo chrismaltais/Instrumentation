@@ -1,11 +1,33 @@
-STARTTIMING: Main
-|	STARTTIMING: Bubble Sort
-|	STOPTIMING: Bubble Sort 1 ms
-|	COMMENT: This is a test comment
-|	STARTTIMING: Merge Sort
-|	STOPTIMING: Merge Sort 0 ms
-|	STARTTIMING: Quick Sort
-|	STOPTIMING: Quick Sort 1 ms
-|	STARTTIMING: Selection Sort
-|	STOPTIMING: Selection Sort 0 ms
-STOPTIMING: Main 8 ms
+|	STARTTIMING: Main
+|	|	STARTTIMING: BubbleSort
+|	|	STOPTIMING: BubbleSort 0 ms
+|	|	STARTTIMING: MergeSort
+|	|	|	STARTTIMING: MergeSort
+|	|	|	|	STARTTIMING: MergeSort
+|	|	|	|	|	STARTTIMING: MergeSort
+|	|	|	|	|	STOPTIMING: MergeSort 0 ms
+|	|	|	|	|	STARTTIMING: MergeSort
+|	|	|	|	|	STOPTIMING: MergeSort 0 ms
+|	|	|	|	STOPTIMING: MergeSort 0 ms
+|	|	|	|	STARTTIMING: MergeSort
+|	|	|	|	STOPTIMING: MergeSort 0 ms
+|	|	|	STOPTIMING: MergeSort 0 ms
+|	|	|	STARTTIMING: MergeSort
+|	|	|	|	STARTTIMING: MergeSort
+|	|	|	|	STOPTIMING: MergeSort 0 ms
+|	|	|	|	STARTTIMING: MergeSort
+|	|	|	|	STOPTIMING: MergeSort 0 ms
+|	|	|	STOPTIMING: MergeSort 0 ms
+|	|	STOPTIMING: MergeSort 0 ms
+|	|	STARTTIMING: QuickSort
+|	|	|	STARTTIMING: QuickSort
+|	|	|	|	STARTTIMING: QuickSort
+|	|	|	|	STOPTIMING: QuickSort 0 ms
+|	|	|	|	STARTTIMING: QuickSort
+|	|	|	|	STOPTIMING: QuickSort 0 ms
+|	|	|	STOPTIMING: QuickSort 0 ms
+|	|	|	STARTTIMING: QuickSort
+|	|	|	STOPTIMING: QuickSort 0 ms
+|	|	STOPTIMING: QuickSort 0 ms
+|	|	STARTTIMING: SelectionSort
+|	|	STOPTIMING: SelectionSort 0 ms
