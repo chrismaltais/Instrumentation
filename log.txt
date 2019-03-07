@@ -1,11 +1,11 @@
 STARTTIMING: Main
 |	STARTTIMING: Bubble Sort
-|	STOPTIMING: Bubble Sort 0 ms
+|	STOPTIMING: Bubble Sort 1 ms
 |	COMMENT: This is a test comment
 |	STARTTIMING: Merge Sort
 |	STOPTIMING: Merge Sort 0 ms
 |	STARTTIMING: Quick Sort
-|	STOPTIMING: Quick Sort 0 ms
+|	STOPTIMING: Quick Sort 1 ms
 |	STARTTIMING: Selection Sort
 |	STOPTIMING: Selection Sort 0 ms
-STOPTIMING: Main 5 ms
+STOPTIMING: Main 8 ms
