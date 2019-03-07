@@ -49,6 +49,7 @@ class SelectionSortAlgorithm extends SortAlgorithm
 			{
 				if (stopRequested)
 				{
+					instrumentation.stopTiming("SelectionSort");
 					return;
 				}
 

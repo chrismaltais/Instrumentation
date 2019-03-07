@@ -46,6 +46,7 @@ class BubbleSort2Algorithm extends SortAlgorithm
 			{
 				if (stopRequested)
 				{
+					instrumentation.stopTiming("BubbleSort");
 					return;
 				}
 				super.compares++;
@@ -63,6 +64,7 @@ class BubbleSort2Algorithm extends SortAlgorithm
 			if (!flipped)
 			{
 				super.updateAllViews(-1, -1);
+				instrumentation.stopTiming("BubbleSort");
 				return;
 			}
 			super.hiMarker = i;

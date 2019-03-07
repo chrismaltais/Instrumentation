@@ -41,11 +41,13 @@ class ExtraStorageMergeSortAlgorithm extends SortAlgorithm
 		
 		if (super.stopRequested)
 		{
+			instrumentation.stopTiming("MergeSort");
 			return;
 		}
 		
 		if (lo >= hi)
 		{
+			instrumentation.stopTiming("MergeSort");
 			return; /* a[lo] is sorted already   */
 		}
 
@@ -55,6 +57,7 @@ class ExtraStorageMergeSortAlgorithm extends SortAlgorithm
 
 		if (super.stopRequested)
 		{
+			instrumentation.stopTiming("MergeSort");
 			return;
 		}
 

@@ -83,6 +83,7 @@ class NaiveQuickSortAlgorithm extends SortAlgorithm
 				super.moves++;
 				super.updateAllViews();
 			}
+			instrumentation.stopTiming("QuickSort");
 			return;
 		}
 
@@ -130,6 +131,7 @@ class NaiveQuickSortAlgorithm extends SortAlgorithm
 
 			if (stopRequested)
 			{
+				instrumentation.stopTiming("QuickSort");
 				return;
 			}
 		}
