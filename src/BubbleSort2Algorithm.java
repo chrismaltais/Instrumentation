@@ -37,6 +37,8 @@ class BubbleSort2Algorithm extends SortAlgorithm
 {
 	void sort(int a[])
 	{
+		Instrumentation instrumentation = Instrumentation.getInstance();
+		instrumentation.startTiming("BubbleSort");
 		for (int i = a.length; --i >= 0;)
 		{
 			boolean flipped = false;
@@ -68,5 +70,6 @@ class BubbleSort2Algorithm extends SortAlgorithm
 		}
 		
 		super.updateAllViews(-1, -1);
+		instrumentation.stopTiming("BubbleSort");
 	}
 }

@@ -60,6 +60,9 @@ class NaiveQuickSortAlgorithm extends SortAlgorithm
 {
 	void sort(int a[], int lo0, int hi0)
 	{
+		Instrumentation instrumentation = Instrumentation.getInstance();
+		instrumentation.startTiming("QuickSort");
+
 		int lo = lo0;
 		int hi = hi0;
 		super.lowMarker = lo0;
@@ -146,6 +149,7 @@ class NaiveQuickSortAlgorithm extends SortAlgorithm
 		 */
 		sort(a, lo0, lo - 1);
 		sort(a, hi + 1, hi0);
+		instrumentation.stopTiming("QuickSort");
 	}
 
 	void sort(int a[])

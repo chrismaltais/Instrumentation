@@ -29,10 +29,14 @@
  * was consistent across all algorithms (the quicksorts used to ignore most
  * of the comparisons in the partitioning, for example).
  */
+
+
 class ExtraStorageMergeSortAlgorithm extends SortAlgorithm
 {
 	void sort(int a[], int lo, int hi, int scratch[])
 	{
+        Instrumentation instrumentation = Instrumentation.getInstance();
+        instrumentation.startTiming("MergeSort");
 		super.updateAllViews(lo, hi);
 		
 		if (super.stopRequested)
@@ -81,6 +85,7 @@ class ExtraStorageMergeSortAlgorithm extends SortAlgorithm
 			super.activeMarker = k;
 			super.updateAllViews();
 		}
+		instrumentation.stopTiming("MergeSort");
 	}
 
 	void sort(int a[])
@@ -89,4 +94,5 @@ class ExtraStorageMergeSortAlgorithm extends SortAlgorithm
 		sort(a, 0, a.length - 1, scratch);
 		super.updateAllViews(-1, -1);
 	}
+
 }

@@ -34,6 +34,8 @@ class SelectionSortAlgorithm extends SortAlgorithm
 {
 	void sort(int a[])
 	{
+		Instrumentation instrumentation = Instrumentation.getInstance();
+		instrumentation.startTiming("SelectionSort");
 		for (int i = 0; i < a.length; i++)
 		{
 			super.lowMarker = i;
@@ -70,5 +72,6 @@ class SelectionSortAlgorithm extends SortAlgorithm
 			super.updateAllViews();
 		}
 		super.updateAllViews(-1, -1);
+		instrumentation.stopTiming("SelectionSort");
 	}
 }
