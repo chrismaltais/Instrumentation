@@ -36,7 +36,7 @@ public class Instrumentation {
             for (int i = 0; i < numTabs; ++i) {
                 tabs += "|\t";
             }
-            System.out.println(tabs + "STARTTIMING: " + comment);
+            //System.out.println(tabs + "STARTTIMING: " + comment);
             dumpOutput.add(tabs + "STARTTIMING: " + comment);
         }
         m = timingMatcher.pop();
@@ -59,7 +59,7 @@ public class Instrumentation {
                 tabs += "|\t";
             }
             long duration = m.endTime - m.startTime;
-            System.out.println(tabs + "STOPTIMING: " + comment + " " + duration + " ms");
+            //System.out.println(tabs + "STOPTIMING: " + comment + " " + duration + " ms");
             dumpOutput.add(tabs + "STOPTIMING: " + comment + " " + duration + " ms");
         }
         m = timingMatcher.pop();
@@ -73,7 +73,7 @@ public class Instrumentation {
             for (int i = 0; i < numTabs; ++i) {
                 tabs += "|\t";
             }
-            System.out.println(tabs + "COMMENT: " + comment);
+            //System.out.println(tabs + "COMMENT: " + comment);
             dumpOutput.add(tabs + "COMMENT: " + comment);
         }
     }

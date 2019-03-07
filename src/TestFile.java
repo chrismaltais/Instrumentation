@@ -4,6 +4,7 @@ import java.util.Timer;
 class TestFile {
 
 	private static long startTime = 0;
+	private static long startMainTime = 0;
 	private static long endTime = 0;
 
     public static int[] populateArray(int size) {
@@ -18,20 +19,20 @@ class TestFile {
     }
     
     public static void main(String[] args) {
-		startTime = System.currentTimeMillis();
+		startMainTime = System.currentTimeMillis();
 
-		// Define instrumentation object
-//		Instrumentation instrumentation = Instrumentation.getInstance();
+		//Define instrumentation object
+		Instrumentation instance = Instrumentation.getInstance();
 
 		// Activate instrumentation object:
-//		instrumentation.activate(true);
+		instance.activate(true);
 
-//		startTime = System.currentTimeMillis();
+		startTime = System.currentTimeMillis();
 		// Begin program test
-//		instrumentation.startTiming("Main");
+		instance.startTiming("Main");
 
-//		endTime = System.currentTimeMillis();
-//		System.out.println("Overhead instrumentation START: " + (endTime - startTime));
+		endTime = System.currentTimeMillis();
+		System.out.println("Overhead instrumentation START: " + (endTime - startTime));
 
     	// Instantiate all sorting algorithms
 
@@ -98,8 +99,8 @@ class TestFile {
 //		endTime = System.currentTimeMillis();
 //		System.out.println("Overhead instrumentation STOP: " + (endTime - startTime));
 
-//    	instrumentation.dump();
+    	instance.dump();
 		endTime = System.currentTimeMillis();
-		System.out.println("Main: " + (endTime - startTime));
+		System.out.println("Main: " + (endTime - startMainTime));
     }
 }
