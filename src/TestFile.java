@@ -45,7 +45,7 @@ class TestFile {
 		SelectionSortAlgorithm selectionSort = new SelectionSortAlgorithm();
 
     	// Create a test array
-    	int arraySize = 5;
+    	int arraySize = 1000;
     	int[] initializeTestValues = populateArray(arraySize);
     	int[] testValues = initializeTestValues.clone();
     	
