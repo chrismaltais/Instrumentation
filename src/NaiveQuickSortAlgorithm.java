@@ -60,16 +60,12 @@ class NaiveQuickSortAlgorithm extends SortAlgorithm
 {
 	void sort(int a[], int lo0, int hi0)
 	{
-		Instrumentation instrumentation = Instrumentation.getInstance();
-		instrumentation.startTiming("QuickSort");
-
 		int lo = lo0;
 		int hi = hi0;
 		super.lowMarker = lo0;
 		super.hiMarker = hi0;
 		if (lo >= hi)
 		{
-			instrumentation.stopTiming("QuickSort");
 			return;
 		} else if (lo == hi - 1)
 		{
@@ -84,7 +80,6 @@ class NaiveQuickSortAlgorithm extends SortAlgorithm
 				super.moves++;
 				super.updateAllViews();
 			}
-			instrumentation.stopTiming("QuickSort");
 			return;
 		}
 
@@ -132,7 +127,6 @@ class NaiveQuickSortAlgorithm extends SortAlgorithm
 
 			if (stopRequested)
 			{
-				instrumentation.stopTiming("QuickSort");
 				return;
 			}
 		}
@@ -152,12 +146,14 @@ class NaiveQuickSortAlgorithm extends SortAlgorithm
 		 */
 		sort(a, lo0, lo - 1);
 		sort(a, hi + 1, hi0);
-		instrumentation.stopTiming("QuickSort");
 	}
 
 	void sort(int a[])
 	{
+		Instrumentation instrumentation = Instrumentation.getInstance();
+		instrumentation.startTiming("QuickSort");
 		sort(a, 0, a.length - 1);
+		instrumentation.stopTiming("QuickSort");
 		super.updateAllViews(-1, -1);
 	}
 }
