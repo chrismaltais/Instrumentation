@@ -80,7 +80,15 @@ public class Instrumentation {
     }
 
     public void dump() {
-        dump("log.txt");
+        Calendar now = Calendar.getInstance();
+        String year = String.valueOf(now.get(Calendar.YEAR)).substring(2);
+        int month = now.get(Calendar.MONTH) + 1;
+        int day = now.get(Calendar.DAY_OF_MONTH);
+        int hour = now.get(Calendar.HOUR_OF_DAY);
+        int minute = now.get(Calendar.MINUTE);
+        int second = now.get(Calendar.SECOND);
+        String filename = String.format("instrumentation%02d%02d%02d%02d%02d%02d.log", day, year, month, hour, minute, second);
+        dump(filename);
     }
 
     public void activate (Boolean onoff) {
