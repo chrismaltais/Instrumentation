@@ -45,8 +45,13 @@ class TestFile {
 		SelectionSortAlgorithm selectionSort = new SelectionSortAlgorithm();
 
     	// Create a test array
-    	int arraySize = 5;
+    	int arraySize = 99999;
+
+		startTime = System.currentTimeMillis();
     	int[] initializeTestValues = populateArray(arraySize);
+		endTime = System.currentTimeMillis();
+		System.out.println("populateArray(): " + (endTime - startTime));
+
     	int[] testValues = initializeTestValues.clone();
     	
     	// Time the Bubble sort
