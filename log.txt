@@ -1,11 +1,12 @@
 STARTTIMING: Main
 |	STARTTIMING: BubbleSort
-|	STOPTIMING: BubbleSort 40399 ms
+|	|	COMMENT: This is a test comment
+|	STOPTIMING: BubbleSort 41645 ms
 |	COMMENT: This is a test comment
 |	STARTTIMING: MergeSort
-|	STOPTIMING: MergeSort 118 ms
+|	STOPTIMING: MergeSort 131 ms
 |	STARTTIMING: QuickSort
-|	STOPTIMING: QuickSort 25 ms
+|	STOPTIMING: QuickSort 31 ms
 |	STARTTIMING: SelectionSort
-|	STOPTIMING: SelectionSort 20839 ms
-STOPTIMING: Main 61401 ms
+|	STOPTIMING: SelectionSort 17285 ms
+STOPTIMING: Main 59110 ms

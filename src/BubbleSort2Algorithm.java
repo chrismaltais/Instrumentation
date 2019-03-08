@@ -39,6 +39,8 @@ class BubbleSort2Algorithm extends SortAlgorithm
 	{
 		Instrumentation instrumentation = Instrumentation.getInstance();
 		instrumentation.startTiming("BubbleSort");
+		instrumentation.comment("This is a test comment");
+
 		for (int i = a.length; --i >= 0;)
 		{
 			boolean flipped = false;
