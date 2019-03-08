@@ -35,19 +35,15 @@ class ExtraStorageMergeSortAlgorithm extends SortAlgorithm
 {
 	void sort(int a[], int lo, int hi, int scratch[])
 	{
-        Instrumentation instrumentation = Instrumentation.getInstance();
-        instrumentation.startTiming("MergeSort");
 		super.updateAllViews(lo, hi);
 		
 		if (super.stopRequested)
 		{
-			instrumentation.stopTiming("MergeSort");
 			return;
 		}
 		
 		if (lo >= hi)
 		{
-			instrumentation.stopTiming("MergeSort");
 			return; /* a[lo] is sorted already   */
 		}
 
@@ -57,7 +53,6 @@ class ExtraStorageMergeSortAlgorithm extends SortAlgorithm
 
 		if (super.stopRequested)
 		{
-			instrumentation.stopTiming("MergeSort");
 			return;
 		}
 
@@ -88,13 +83,15 @@ class ExtraStorageMergeSortAlgorithm extends SortAlgorithm
 			super.activeMarker = k;
 			super.updateAllViews();
 		}
-		instrumentation.stopTiming("MergeSort");
 	}
 
 	void sort(int a[])
 	{
 		int scratch[] = new int[a.length];
+		Instrumentation instrumentation = Instrumentation.getInstance();
+		instrumentation.startTiming("MergeSort");
 		sort(a, 0, a.length - 1, scratch);
+		instrumentation.stopTiming("MergeSort");
 		super.updateAllViews(-1, -1);
 	}
 
