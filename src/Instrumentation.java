@@ -20,14 +20,10 @@ public class Instrumentation {
     }
 
     public void startTiming(String comment){
-        Method m = new Method(comment);
-        m.startTime = System.currentTimeMillis();
-        int tier = timingMatcher.size();
-        timingMatcher.push(m);
         if (isActive) {
-            m = new Method(comment);
+            Method m = new Method(comment);
             m.startTime = System.currentTimeMillis();
-            tier = timingMatcher.size();
+            int tier = timingMatcher.size();
             timingMatcher.push(m);
 
             // generate log for start event for later dumping
@@ -39,17 +35,11 @@ public class Instrumentation {
             //System.out.println(tabs + "STARTTIMING: " + comment);
             dumpOutput.add(tabs + "STARTTIMING: " + comment);
         }
-        m = timingMatcher.pop();
-        m.endTime = System.currentTimeMillis();
     }
 
     public void stopTiming(String comment){
-        Method m = new Method(comment);
-        m.startTime = System.currentTimeMillis();
-        int tier = timingMatcher.size();
-        timingMatcher.push(m);
         if (isActive) {
-            m = timingMatcher.pop();
+            Method m = timingMatcher.pop();
             m.endTime = System.currentTimeMillis();
 
             // generate log for stop event for later dumping
@@ -62,8 +52,6 @@ public class Instrumentation {
             //System.out.println(tabs + "STOPTIMING: " + comment + " " + duration + " ms");
             dumpOutput.add(tabs + "STOPTIMING: " + comment + " " + duration + " ms");
         }
-        m = timingMatcher.pop();
-        m.endTime = System.currentTimeMillis();
     }
 
     public void comment(String comment){
@@ -81,7 +69,7 @@ public class Instrumentation {
     public void dump(String filename) {
         String fileContent = "";
         for (String s : dumpOutput) {
-            System.out.println(s);
+//            System.out.println(s);
             fileContent += s + "\n";
         }
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename))) {
